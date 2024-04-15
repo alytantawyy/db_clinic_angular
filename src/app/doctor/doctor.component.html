@@ -1,0 +1,30 @@
+<!-- doctor.component.html -->
+<div style="background-color: #a5cfe3; padding: 20px; color: black; font-family: 'Montserrat', sans-serif;">
+    <div class="container">
+      <h1>Doctors</h1>
+      <div *ngIf="doctors && doctors.length > 0; else noDoctors">
+        <div class="card mb-3" *ngFor="let doctor of doctors">
+          <div class="card-body">
+            <h5 class="card-title">{{ doctor.name }}</h5>
+            <p class="card-text">Id: {{ doctor.doctorId }}</p>
+            <p class="card-text">Specialization: {{ doctor.specialization }}</p>
+            <p class="card-text">Contact Number: {{ doctor.contactNumber }}</p>
+            <div class="row justify-content-end">
+              <div class="col-auto">
+                <div class="mb-2">
+                  <button class="btn btn-bg-color" routerLink="/doctors/{{doctor.doctorId}}">Update</button>
+                </div>
+                <div>
+                  <button class="btn btn-bg-color" (click)="deleteDoctor(doctor.doctorId)">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ng-template #noDoctors>
+        <p>No doctors available.</p>
+      </ng-template>
+      <button class="btn btn-bg-color float-right" routerLink="/doctors/create">Add New Doctor</button>
+    </div>
+  </div>
