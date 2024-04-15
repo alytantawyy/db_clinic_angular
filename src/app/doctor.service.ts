@@ -28,8 +28,8 @@ export class DoctorService {
     return this.http.get(BASIC_URL + "/api/doctors/" + id);
   }
 
-  updateDoctor(id: number, customer: any): Observable<any>{
-    return this.http.put(BASIC_URL + "/api/doctors/" + id, customer);
+  updateDoctor(id: number, doctor: any): Observable<any>{
+    return this.http.put(BASIC_URL + "/api/doctors/" + id, doctor);
   }
 
   
