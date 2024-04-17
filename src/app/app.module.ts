@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,12 +10,14 @@ import { PatientComponent } from './patient/patient.component';
 import { MedicineComponent } from './medicine/medicine.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DoctorCreateComponent } from './doctor-create/doctor-create.component';
 import { DoctorUpdateComponent } from './doctor-update/doctor-update.component';
 import { AppointmentCreateComponent } from './appointment-create/appointment-create.component';
 import { AppointmentUpdateComponent } from './appointment-update/appointment-update.component';
+import { PatientCreateComponent } from './patient-create/patient-create.component';
+import { PatientUpdateComponent } from './patient-update/patient-update.component';
 
 
 
@@ -30,7 +33,9 @@ import { AppointmentUpdateComponent } from './appointment-update/appointment-upd
     DoctorCreateComponent,
     DoctorUpdateComponent,
     AppointmentCreateComponent,
-    AppointmentUpdateComponent
+    AppointmentUpdateComponent,
+    PatientCreateComponent,
+    PatientUpdateComponent
   ],
   imports: [
     BrowserModule,

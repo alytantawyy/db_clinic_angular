@@ -6,7 +6,7 @@ import { AppointmentService } from '../appointment.service';
   templateUrl: './appointment.component.html',
   styleUrls: ['./appointment.component.css']
 })
-export class AppointmentComponent implements OnInit {
+export class AppointmentComponent{
 
   constructor(private appointmentService: AppointmentService) { }
 

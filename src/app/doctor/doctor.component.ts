@@ -6,7 +6,7 @@ import { DoctorService } from '../doctor.service';
   templateUrl: './doctor.component.html',
   styleUrls: ['./doctor.component.css']
 })
-export class DoctorComponent implements OnInit {
+export class DoctorComponent{
 
   constructor(private doctorService: DoctorService) { }
 
