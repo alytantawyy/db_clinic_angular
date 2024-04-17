@@ -13,6 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DoctorCreateComponent } from './doctor-create/doctor-create.component';
 import { DoctorUpdateComponent } from './doctor-update/doctor-update.component';
+import { AppointmentCreateComponent } from './appointment-create/appointment-create.component';
+import { AppointmentUpdateComponent } from './appointment-update/appointment-update.component';
 
 
 
@@ -26,7 +28,9 @@ import { DoctorUpdateComponent } from './doctor-update/doctor-update.component';
     AppointmentComponent,
     NavbarComponent,
     DoctorCreateComponent,
-    DoctorUpdateComponent
+    DoctorUpdateComponent,
+    AppointmentCreateComponent,
+    AppointmentUpdateComponent
   ],
   imports: [
     BrowserModule,

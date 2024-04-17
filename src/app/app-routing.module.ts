@@ -8,6 +8,8 @@ import { MedicineComponent } from './medicine/medicine.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { DoctorCreateComponent } from './doctor-create/doctor-create.component';
 import { DoctorUpdateComponent } from './doctor-update/doctor-update.component';
+import { AppointmentCreateComponent } from './appointment-create/appointment-create.component';
+import { AppointmentUpdateComponent } from './appointment-update/appointment-update.component';
 
 
 const routes: Routes = [
@@ -17,7 +19,9 @@ const routes: Routes = [
   { path: 'medicines', component: MedicineComponent },
   { path: 'appointments', component: AppointmentComponent },
   { path: 'doctors/create', component: DoctorCreateComponent },
-  { path: 'doctors/:id', component: DoctorUpdateComponent }
+  { path: 'doctors/:id', component: DoctorUpdateComponent },
+  { path: 'appointments/:id', component: AppointmentUpdateComponent },
+  { path: 'appointments/create', component: AppointmentCreateComponent}
 ];
 
 
