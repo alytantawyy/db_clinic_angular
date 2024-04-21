@@ -18,6 +18,8 @@ import { AppointmentCreateComponent } from './appointment-create/appointment-cre
 import { AppointmentUpdateComponent } from './appointment-update/appointment-update.component';
 import { PatientCreateComponent } from './patient-create/patient-create.component';
 import { PatientUpdateComponent } from './patient-update/patient-update.component';
+import { MedicineCreateComponent } from './medicine-create/medicine-create.component';
+import { MedicineUpdateComponent } from './medicine-update/medicine-update.component';
 
 
 
@@ -35,7 +37,9 @@ import { PatientUpdateComponent } from './patient-update/patient-update.componen
     AppointmentCreateComponent,
     AppointmentUpdateComponent,
     PatientCreateComponent,
-    PatientUpdateComponent
+    PatientUpdateComponent,
+    MedicineCreateComponent,
+    MedicineUpdateComponent
   ],
   imports: [
     BrowserModule,

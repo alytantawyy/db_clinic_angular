@@ -5,6 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { DoctorComponent } from './doctor/doctor.component';
 import { PatientComponent } from './patient/patient.component';
 import { MedicineComponent } from './medicine/medicine.component';
+import { MedicineCreateComponent } from './medicine-create/medicine-create.component';
+import { MedicineUpdateComponent } from './medicine-update/medicine-update.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { DoctorCreateComponent } from './doctor-create/doctor-create.component';
 import { DoctorUpdateComponent } from './doctor-update/doctor-update.component';
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'patients/create', component: PatientCreateComponent},
   { path: 'patients/:id', component: PatientUpdateComponent },
   { path: 'medicines', component: MedicineComponent },
+  { path: 'medicines/create', component: MedicineCreateComponent },
+  { path: 'medicines/:id', component: MedicineUpdateComponent },
   { path: 'appointments', component: AppointmentComponent },
   { path: 'appointments/create', component: AppointmentCreateComponent},
   { path: 'doctors/create', component: DoctorCreateComponent },
