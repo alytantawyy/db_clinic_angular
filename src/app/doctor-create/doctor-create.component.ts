@@ -19,7 +19,8 @@ export class DoctorCreateComponent {
     this.postDoctorForm = this.fb.group({
       name: [null, [Validators.required]],
       specialization: [null, [Validators.required]],
-      contactNumber: [null, [Validators.required]]
+      contactNumber: [null, [Validators.required]],
+      hourlyPay: [null, [Validators.required]]
     });
   }
 
