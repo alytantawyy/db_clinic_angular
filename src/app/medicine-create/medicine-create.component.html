@@ -1,25 +1,28 @@
 <div class="container-fluid vh-100 d-flex justify-content-center align-items-center" style="background-color: #a5cfe3;">
-    <div class="form-container p-4">
-      <div class="form-title mb-4">Add New Medication</div>
-      <form [formGroup]="postMedForm">
-        <div class="form-group">
-          <label for="name">Medication Name: </label>
-          <input type="text" id="name" name="name" required formControlName="name" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="manufacturer">Manufacturer: </label>
-          <input type="text" id="manufacturer" name="manufacturer" formControlName="manufacturer" required class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="price">Price:</label>
-          <input type="number" id="price" name="price" formControlName="price" required class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" formControlName="quantity" required class="form-control">
-          </div>
-        <button type="submit" class="btn btn-bg-color" (click)="postMed()">Post</button>
-      </form>
-    </div>
+  <div class="form-container p-4" *ngIf="postMedForm">
+    <div class="form-title mb-4">Add New Medication</div>
+    <form [formGroup]="postMedForm" (ngSubmit)="postMed()">
+      <div class="form-group">
+        <label for="name">Medication Name: </label>
+        <input type="text" id="name" name="name" required formControlName="name" class="form-control">
+        <div *ngIf="postMedForm.get('name')?.invalid && postMedForm.get('name')?.touched" class="text-danger">Medication Name is required</div>
+      </div>
+      <div class="form-group">
+        <label for="manufacturer">Manufacturer: </label>
+        <input type="text" id="manufacturer" name="manufacturer" formControlName="manufacturer" required class="form-control">
+        <div *ngIf="postMedForm.get('manufacturer')?.invalid && postMedForm.get('manufacturer')?.touched" class="text-danger">Manufacturer is required</div>
+      </div>
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" formControlName="price" required class="form-control">
+        <div *ngIf="postMedForm.get('price')?.invalid && postMedForm.get('price')?.touched" class="text-danger">Price is required</div>
+      </div>
+      <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" formControlName="quantity" required class="form-control">
+        <div *ngIf="postMedForm.get('quantity')?.invalid && postMedForm.get('quantity')?.touched" class="text-danger">Quantity is required</div>
+      </div>
+      <button type="submit" class="btn btn-bg-color" [disabled]="postMedForm.invalid">Post</button>
+    </form>
   </div>
-  
+</div>

@@ -1,29 +1,33 @@
 <div class="container-fluid vh-100 d-flex justify-content-center align-items-center" style="background-color: #a5cfe3;">
-    <div class="form-container p-4">
-      <div class="form-title mb-4">Add New Patient</div>
-      <form [formGroup]="postPatientForm">
-        <div class="form-group">
-          <label for="name">Name: </label>
-          <input type="text" id="name" name="name" required formControlName="name" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="specialization">Age: </label>
-          <input type="number" id="age" name="age" formControlName="age" required class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="specialization">Gender: </label>
-            <input type="text" id="gender" name="gender" formControlName="gender" required class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="contactNumber">Contact Number</label>
-          <input type="tel" id="contactNumber" name="contactNumber" formControlName="contactNumber" required class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="specialization">Doctor Id: </label>
-            <input type="id" id="doctorId" name="doctorId" formControlName="doctorId" required class="form-control">
-        </div>
-        <button type="submit" class="btn btn-bg-color" (click)="postPatient()">Post</button>
-      </form>
-    </div>
+  <div class="form-container p-4" *ngIf="postPatientForm">
+    <div class="form-title mb-4">Add New Patient</div>
+    <form [formGroup]="postPatientForm" (ngSubmit)="postPatient()">
+      <div class="form-group">
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name" required formControlName="name" class="form-control">
+        <div *ngIf="postPatientForm.get('name')?.invalid && postPatientForm.get('name')?.touched" class="text-danger">Name is required</div>
+      </div>
+      <div class="form-group">
+        <label for="age">Age: </label>
+        <input type="number" id="age" name="age" formControlName="age" required class="form-control">
+        <div *ngIf="postPatientForm.get('age')?.invalid && postPatientForm.get('age')?.touched" class="text-danger">Age is required</div>
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender: </label>
+        <input type="text" id="gender" name="gender" formControlName="gender" required class="form-control">
+        <div *ngIf="postPatientForm.get('gender')?.invalid && postPatientForm.get('gender')?.touched" class="text-danger">Gender is required</div>
+      </div>
+      <div class="form-group">
+        <label for="contactNumber">Contact Number: </label>
+        <input type="tel" id="contactNumber" name="contactNumber" formControlName="contactNumber" required class="form-control">
+        <div *ngIf="postPatientForm.get('contactNumber')?.invalid && postPatientForm.get('contactNumber')?.touched" class="text-danger">Contact Number is required</div>
+      </div>
+      <div class="form-group">
+        <label for="doctorId">Doctor ID: </label>
+        <input type="text" id="doctorId" name="doctorId" formControlName="doctorId" required class="form-control">
+        <div *ngIf="postPatientForm.get('doctorId')?.invalid && postPatientForm.get('doctorId')?.touched" class="text-danger">Doctor ID is required</div>
+      </div>
+      <button type="submit" class="btn btn-bg-color" [disabled]="postPatientForm.invalid">Post</button>
+    </form>
   </div>
-  
+</div>
