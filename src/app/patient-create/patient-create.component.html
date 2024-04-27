@@ -8,9 +8,9 @@
         <div *ngIf="postPatientForm.get('name')?.invalid && postPatientForm.get('name')?.touched" class="text-danger">Name is required</div>
       </div>
       <div class="form-group">
-        <label for="age">Age: </label>
-        <input type="number" id="age" name="age" formControlName="age" required class="form-control">
-        <div *ngIf="postPatientForm.get('age')?.invalid && postPatientForm.get('age')?.touched" class="text-danger">Age is required</div>
+        <label for="dob">Date of Birth: </label>
+        <input type="date" id="dob" name="dob" formControlName="dob" required class="form-control" (change)="calculateAge()">
+        <div *ngIf="postPatientForm.get('dob')?.invalid && postPatientForm.get('dob')?.touched" class="text-danger">Date of Birth is required</div>
       </div>
       <div class="form-group">
         <label for="gender">Gender: </label>

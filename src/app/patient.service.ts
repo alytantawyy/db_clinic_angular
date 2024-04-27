@@ -30,4 +30,6 @@ export class PatientService {
   updatePatient(id: number, patient: any): Observable<any>{
     return this.http.put(BASIC_URL + "/api/patients/" + id, patient);
   }
+
+  
 }
