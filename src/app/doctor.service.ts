@@ -32,5 +32,9 @@ export class DoctorService {
     return this.http.put(BASIC_URL + "/api/doctors/" + id, doctor);
   }
 
+  getDoctorNamesById(doctorId: string): Observable<string[]> {
+    return this.http.get<string[]>(`/api/doctors/${doctorId}/names`);
+  }
+
   
 }

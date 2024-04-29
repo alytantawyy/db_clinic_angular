@@ -11,6 +11,7 @@ import { AppointmentService } from '../appointment.service';
 export class AppointmentCreateComponent {
 
   postAppointmentForm!: FormGroup;
+  isAppointmentUnavailable: boolean = false; // Define the property here
 
   constructor(private appointmentService: AppointmentService, private fb: FormBuilder, private router: Router) { }
 
@@ -40,15 +41,16 @@ export class AppointmentCreateComponent {
       notes
     };
   }
+
   
 
   postAppointment() {
     // Reformat the form data
     const formattedData = this.reformatFormData(this.postAppointmentForm.value);
 
-    console.log(formattedData);
-  
-    // Submit the appointment
+   
+
+    // Submit the appointment if available
     this.appointmentService.postAppointment(formattedData).subscribe((res) => {
       console.log(res); // Log the response
       this.router.navigateByUrl("/appointments");
